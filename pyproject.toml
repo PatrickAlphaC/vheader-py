@@ -1,6 +1,6 @@
 [project]
 name = "vheader"
-version = "0.1.0"
+version = "0.1.1"
 description = "Generate perfect Vyper code headers every time."
 readme = "README.md"
 requires-python = ">=3.8"

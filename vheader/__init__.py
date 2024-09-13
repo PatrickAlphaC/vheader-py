@@ -3,9 +3,14 @@ import pyperclip
 
 
 def main():
-    # Collect input arguments and join them into a single string
-    input_text = " ".join(sys.argv[1:])
+    output = transform_to_header(" ".join(sys.argv[1:]))
+    # Copy the header to the clipboard
+    print(output)
+    pyperclip.copy(output)
+    return
 
+
+def transform_to_header(input_text) -> str:
     # Calculate the formatted output
     padding = " " * ((64 - len(input_text)) // 2)
     output = (
@@ -13,12 +18,7 @@ def main():
         f"# {padding}{input_text.upper()}\n"
         "# ------------------------------------------------------------------"
     )
-
-    # Print the header to the console
-    print(output)
-
-    # Copy the header to the clipboard
-    pyperclip.copy(output)
+    return output
 
 
 if __name__ == "__main__":
