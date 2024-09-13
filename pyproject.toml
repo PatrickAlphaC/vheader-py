@@ -1,0 +1,22 @@
+[project]
+name = "vheader"
+version = "0.1.0"
+description = "Generate perfect Vyper code headers every time."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pyperclip>=1.9.0",
+]
+
+[tool.uv]
+managed = true
+package = true
+dev-dependencies = [
+    "ruff>=0.6.5",
+]
+
+[project.scripts]
+"vheader" = "vheader:main"
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
